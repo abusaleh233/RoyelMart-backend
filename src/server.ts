@@ -1,10 +1,23 @@
 import app from "./app.js";
-import config from "./config/index.js";
+import { prisma } from "./utils/prisma.js";
 
 
+const PORT = 5000;
 
-const PORT = config.app.port;
+async function main() {
+  try {
+    await prisma.$connect();
 
-app.listen(PORT, () => {
-  console.log(`Royal Mart API is running successfully ${config.app.appUrl}`);
-});
+    console.log("Database connected successfully ✅");
+
+    app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT} 🚀`);
+    });
+
+  } catch (error) {
+    console.log("Database connection failed ❌", error);
+    process.exit(1);
+  }
+}
+
+main();

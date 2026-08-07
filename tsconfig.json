@@ -17,5 +17,9 @@
   "exclude": [
     "node_modules",
     "dist"
+  ],
+    "typeRoots": [
+    "./node_modules/@types",
+    "./src/types"
   ]
 }

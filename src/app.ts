@@ -3,6 +3,9 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import morgan from "morgan";
 import config from "./config/index.js";
+import authRoute from "./modules/auth/auth.route.js";
+import categoryRoute from "./modules/category/category.route.js";
+import productRoute from "./modules/product/product.route.js";
 
 
 
@@ -29,5 +32,10 @@ app.get("/", (req: Request, res: Response) => {
     message: "ShopNest API is running successfully 🚀",
   });
 });
+
+app.use("/api/auth",authRoute);
+app.use("/api/categories",categoryRoute);
+app.use("/api/products", productRoute);
+
 
 export default app;

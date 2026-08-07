@@ -1,0 +1,21 @@
+model User {
+  id        String  @id @default(uuid())
+  name      String
+  email     String  @unique
+  password  String
+  phone     String?
+  image     String?
+  role      Role    @default(USER)
+  isDeleted Boolean @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  products Product[]
+  cart     Cart?
+  wishlist Wishlist?
+  orders   Order[]
+  reviews  Review[]
+  payments Payment[]
+}
