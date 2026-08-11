@@ -10,6 +10,7 @@ import cartRoute from "./modules/cart/cart.route.js";
 import wishlistRoute from "./modules/wishlist/wishlist.route.js";
 import orderRoute from "./modules/order/order.route.js";
 import paymentRoute from "./modules/payment/payment.route.js";
+import adminRoute from "./modules/admin/admin.route.js";
 
 
 
@@ -43,6 +44,7 @@ app.use("/api/cart", cartRoute);
 app.use("/api/wishlist", wishlistRoute);
 app.use("/api/orders", orderRoute);
 app.use("/api/payment", paymentRoute);
+app.use("/api/admin",adminRoute);
 
 
 export default app;
