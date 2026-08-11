@@ -8,6 +8,8 @@ import categoryRoute from "./modules/category/category.route.js";
 import productRoute from "./modules/product/product.route.js";
 import cartRoute from "./modules/cart/cart.route.js";
 import wishlistRoute from "./modules/wishlist/wishlist.route.js";
+import orderRoute from "./modules/order/order.route.js";
+import paymentRoute from "./modules/payment/payment.route.js";
 
 
 
@@ -39,6 +41,8 @@ app.use("/api/categories",categoryRoute);
 app.use("/api/products", productRoute);
 app.use("/api/cart", cartRoute);
 app.use("/api/wishlist", wishlistRoute);
+app.use("/api/orders", orderRoute);
+app.use("/api/payment", paymentRoute);
 
 
 export default app;
