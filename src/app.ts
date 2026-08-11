@@ -6,7 +6,8 @@ import config from "./config/index.js";
 import authRoute from "./modules/auth/auth.route.js";
 import categoryRoute from "./modules/category/category.route.js";
 import productRoute from "./modules/product/product.route.js";
-
+import cartRoute from "./modules/cart/cart.route.js";
+import wishlistRoute from "./modules/wishlist/wishlist.route.js";
 
 
 
@@ -36,6 +37,8 @@ app.get("/", (req: Request, res: Response) => {
 app.use("/api/auth",authRoute);
 app.use("/api/categories",categoryRoute);
 app.use("/api/products", productRoute);
+app.use("/api/cart", cartRoute);
+app.use("/api/wishlist", wishlistRoute);
 
 
 export default app;
